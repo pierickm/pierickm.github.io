@@ -1,0 +1,5 @@
+Student name: Maike Pierick
+Student number: 699725
+Student class: IT1B
+URL student GitHub website: https://pierickm.github.io
+URL student GitHub repository: https://github.com/pierickm.github.io
