@@ -1,3 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+*{
+    margin:0;
+}
 
+body{
+    font-size: 18px;
+    font-family: 'Roboto', Verdana, sans-serif;
+}
 
+header{
+    background-color: #000;
+    color: #fbf9ff;
+    padding-left:1%;
+}
+header img{
+    height:50px;
+}
 
+h1{
+    font-size:2em;
+    font-weight: 400;
+}
+h2{
+    font-weight: 200;
+    font-size: 1.5em;
+}
+nav{
+    background-color: #00e0a1;
+    display: flex;
+    justify-content: center;
+}
+nav a{
+    text-decoration: none;
+    color: #000;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li{
+    margin: 10px 40px;
+}
