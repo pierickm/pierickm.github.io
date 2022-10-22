@@ -7,9 +7,11 @@
 body{
     font-size: 18px;
     font-family: 'Roboto', Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
-header{
+header, footer{
     background-color: #000;
     color: #fbf9ff;
     padding-left:1%;
@@ -43,4 +45,13 @@ nav ul{
 
 nav ul li{
     margin: 10px 40px;
+}
+
+#cookie-statement {
+    position: fixed;
+    right: 0;
+    bottom:0;
+    background-color: #FA0;
+    opacity: 50%;
+    color:#FFF;
 }
