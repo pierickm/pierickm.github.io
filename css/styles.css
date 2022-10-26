@@ -8,14 +8,20 @@ body{
     font-size: 18px;
     font-family: 'Roboto', Verdana, sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
-header, footer{
+body>header, body>footer{
     background-color: #000;
     color: #fbf9ff;
     padding-left:1%;
+    flex-basis: 100%;
 }
+
+body>footer{
+    padding: 1.5em 0.5em;
+}
+
 header img{
     height:50px;
 }
@@ -24,14 +30,19 @@ h1{
     font-size:2em;
     font-weight: 400;
 }
-h2{
-    font-weight: 200;
+h2, header{
+    font-weight: 300;
     font-size: 1.5em;
+}
+h3{
+    font-weight:200;
+    font-size:1.3em;
 }
 nav{
     background-color: #00e0a1;
     display: flex;
     justify-content: center;
+    flex-basis: 100%;
 }
 nav a{
     text-decoration: none;
@@ -47,6 +58,9 @@ nav ul li{
     margin: 10px 40px;
 }
 
+video{
+    width: 100%;
+}
 #cookie-statement {
     position: fixed;
     right: 0;
@@ -54,4 +68,70 @@ nav ul li{
     background-color: #FA0;
     opacity: 50%;
     color:#FFF;
+    padding: 1.5em 0;
+    width: 28%;
+    text-align: center;
+}
+
+section {
+    width: 70%;
+    flex-grow: 0;
+    flex-shrink:0;
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    margin: 5% 1%;
+    
+}
+
+article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin:  3% 0;
+}
+
+article > header{
+   flex-basis:100%;
+}
+
+article p{
+    flex-basis: 45%;
+    flex-shrink: 0;
+}
+article figure{
+    flex-basis: 40%;
+}
+
+article img{
+    width: 100%;
+}
+
+#upcoming-routes{
+    width: 25%;
+    flex-shrink: 0;
+    flex-grow: 0; 
+    align-self: stretch;
+    background-color: #00e0a1;
+    padding: 20% 0 0 3%;
+    margin:0;
+}
+
+#upcoming-routes li{
+    margin-top: 15%;
+}
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 480){
+    .desktop, .tablet{
+        display: none;
+    }
+}
+@media screen and (min-width: 481) and (max-width: 1279) {
+    .mobile{
+        display: none;
+    }
 }
