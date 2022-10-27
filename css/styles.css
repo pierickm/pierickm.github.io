@@ -9,6 +9,7 @@ body{
     font-family: 'Roboto', Verdana, sans-serif;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 body>header, body>footer{
@@ -30,7 +31,7 @@ h1{
     font-size:2em;
     font-weight: 400;
 }
-h2, header{
+h2,header {
     font-weight: 300;
     font-size: 1.5em;
 }
@@ -69,19 +70,18 @@ video{
     opacity: 50%;
     color:#FFF;
     padding: 1.5em 0;
-    width: 28%;
+    width: 21.5%;
     text-align: center;
 }
 
 section {
-    width: 70%;
-    flex-grow: 0;
+    width: 75%;
+    flex-grow: 1;
     flex-shrink:0;
     display: flex;
     flex-direction:column;
     justify-content: flex-start;
     margin: 5% 1%;
-    
 }
 
 article{
@@ -96,11 +96,12 @@ article > header{
 }
 
 article p{
-    flex-basis: 45%;
-    flex-shrink: 0;
+    flex-basis: 40%;
+    flex-shrink:1;
 }
 article figure{
-    flex-basis: 40%;
+    flex-basis: 45%;
+    flex-shrink:1;
 }
 
 article img{
@@ -108,30 +109,67 @@ article img{
 }
 
 #upcoming-routes{
-    width: 25%;
+    width: 20%;
     flex-shrink: 0;
-    flex-grow: 0; 
+    flex-grow: 1; 
     align-self: stretch;
-    background-color: #00e0a1;
-    padding: 20% 0 0 3%;
-    margin:0;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: flex-start;
+    background-color: #c8f8ea;
+    padding: 10% 0;
+}
+
+#upcoming-routes ol{
+    padding-top:5%;
 }
 
 #upcoming-routes li{
-    margin-top: 15%;
+    margin: 3% 3% 3% 0;
 }
 
 .mobile {
     display: none;
 }
 
-@media screen and (max-width: 480){
-    .desktop, .tablet{
+@media screen and (max-width: 480px){
+    .desktop{
+        display: none;
+    }
+    .tablet{
         display: none;
     }
 }
-@media screen and (min-width: 481) and (max-width: 1279) {
+@media screen and (min-width: 481px) and (max-width: 1279px) {
     .mobile{
         display: none;
+    }
+    video{
+        order:1;
+    }
+    section{
+        order:2;
+    }
+    #upcoming-route{
+        order:0;
+    }
+    #product1{
+        order:3;
+    }
+    #product2{
+        order:2;
+    }
+    #product3{
+        order:0;
+    }
+    article > header{
+        order:-2;
+    }
+    article > figure{
+        order:-1;
+    }
+    footer{
+        order:5
     }
 }
