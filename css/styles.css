@@ -77,7 +77,7 @@ video{
     z-index:9999;
 }
 
-section {
+#product-articles {
     width: 75%;
     flex-grow: 1;
     flex-shrink:0;
@@ -87,22 +87,22 @@ section {
     margin: 5% 1%;
 }
 
-article{
+article {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin:  3% 0;
 }
 
-article > header{
+#product-articles article > header{
    flex-basis:100%;
 }
 
-article p{
+#product-articles article p{
     flex-basis: 40%;
     flex-shrink:1;
 }
-article figure{
+#product-articles article figure{
     flex-basis: 45%;
     flex-shrink:1;
 }
@@ -160,9 +160,12 @@ article img{
 #aside-product3{
     grid-area: aside-product3;
 }
+
 #product-grid{
     display: grid;
-    grid-template-columns: ;
+    padding: 10%;
+    column-gap: 5%;
+    row-gap: 3%;
     grid-template-areas:
     "article2 article1 article3"
     "article2 article1 article3"
@@ -171,9 +174,26 @@ article img{
     "article5 article1 article4"
     "article5 article1 article4"
     "article5 article6 article6"
-    "aside-product1 aside-product2 aside-product3"
-    "aside-product1 aside-product2 aside-product3"
+    "product-imgs product-imgs product-imgs"
+    "product-imgs product-imgs product-imgs"
     ;
+}
+#product-imgs{
+    grid-area: product-imgs;
+    display: grid;
+    column-gap: 5%;
+    grid-template-areas: 
+    "aside-product1 aside-product2 aside-product3"
+    "aside-product1 aside-product2 aside-product3"   
+    ;
+}
+#product-imgs img{
+    width:100%;
+}
+#product-grid article{
+    border: solid 5px #c8f8ea;
+    border-radius: 5px;
+    padding: 5%;
 }
 
 /*Media query for Mobile*/
@@ -241,7 +261,6 @@ article img{
     }
     #product-grid{
         display: grid;
-        grid-template-columns: ;
         grid-template-areas:
         "article5"
         "article5"
@@ -301,7 +320,6 @@ article img{
 
     #product-grid{
         display: grid;
-        grid-template-columns: ;
         grid-template-areas:
         "article1 article2"
         "article1 article2"
