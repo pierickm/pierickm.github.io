@@ -195,6 +195,54 @@ article img{
     border-radius: 5px;
     padding: 5%;
 }
+table{
+    grid-area: price-table;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 4px solid #c8f8ea;
+}
+th{
+    text-align:center;
+}
+td{
+    padding: 15px;
+    text-align: left;
+}
+#price-source{
+    grid-area: price-source;
+}
+#smartwatch{
+    grid-area: smartwatch;
+}
+#performance-tracker{
+    grid-area: performance;
+}
+#vr{
+    grid-area: vr;
+}
+#innovative-products{
+    grid-area: products;
+    display: grid;
+    grid-template-areas: 
+    "smartwatch"
+    "performance"
+    "vr"
+    ;
+    
+}
+#innovative-products img {
+    width:100%;
+}
+#pricelist {
+    display: grid;
+    grid-template-areas: 
+    "price-table products" 
+    "price-source products"
+    ;
+    gap: 5%;
+}
+
 
 /*Media query for Mobile*/
 @media screen and (max-width:480px) {
@@ -260,7 +308,6 @@ article img{
         margin-left: 25%;   
     }
     #product-grid{
-        display: grid;
         grid-template-areas:
         "article5"
         "article5"
@@ -282,7 +329,6 @@ article img{
         margin-bottom: 70%;
     }
     #product-imgs{
-        display: grid;
         grid-template-areas: 
         "aside-product1"
         "aside-product2"
@@ -294,6 +340,20 @@ article img{
     }
     #cookie-statement{
         height: 3%;
+    }
+    #pricelist{
+        grid-template-areas: 
+        "price-table"
+        "price-source"
+        "products"
+        ;
+    }
+    #innovative-products{
+        grid-template-areas: 
+        "smartwatch"
+        "performance"
+        "vr"
+        ;
     }
 }
 
@@ -335,7 +395,6 @@ article img{
     }
     
     #product-grid{
-        display: grid;
         grid-template-areas:
         "article1 article2"
         "article1 article2"
@@ -351,16 +410,24 @@ article img{
         order:4;
         margin-bottom: 20%;
     }
-    #product-imgs{
-        display:grid;
+    #product-imgs{ 
         grid-template-areas: 
         "aside-product1 aside-product2"
         "aside-product1 aside-product2"
         ;
     }
-
-    
-
+    #pricelist{
+        grid-template-areas: 
+        "price-table"
+        "price-source"
+        "products"
+        ;
+    }
+    #innovative-products{
+        grid-template-areas: 
+        "performance vr"
+        ;
+    }
 }
 
 /*Desktop*/
