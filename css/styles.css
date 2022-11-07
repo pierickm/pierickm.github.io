@@ -3,7 +3,6 @@
 *{
     margin:0;
 }
-
 body{
     font-size: 18px;
     font-family: 'Roboto', Verdana, sans-serif;
@@ -11,22 +10,18 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 }
-
 body>header, body>footer{
     background-color: #000;
     color: #fbf9ff;
     padding-left:1%;
     flex-basis: 100%;
 }
-
 body>footer{
     padding: 1.5em 0.5em;
 }
-
 header img{
     height:50px;
 }
-
 h1{
     font-size:2em;
     font-weight: 400;
@@ -50,20 +45,16 @@ nav a{
     text-decoration: none;
     color: #000;
 }
-
 nav ul{
     list-style-type: none;
     display: flex;
 }
-
 nav ul li{
     margin: 10px 40px;
 }
-
 video{
     width: 100%;
 }
-
 #cookie-statement {
     position: fixed;
     right: 0;
@@ -76,7 +67,6 @@ video{
     text-align: center;
     z-index:9999;
 }
-
 #product-articles {
     width: 75%;
     flex-grow: 1;
@@ -86,18 +76,15 @@ video{
     justify-content: flex-start;
     margin: 5% 1%;
 }
-
 article {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin:  3% 0;
 }
-
 #product-articles article > header{
    flex-basis:100%;
 }
-
 #product-articles article p{
     flex-basis: 40%;
     flex-shrink:1;
@@ -106,11 +93,9 @@ article {
     flex-basis: 45%;
     flex-shrink:1;
 }
-
 article img{
     width: 100%;
 }
-
 #upcoming-routes{
     width: 20%;
     flex-shrink: 0;
@@ -123,11 +108,9 @@ article img{
     background-color: #c8f8ea;
     padding: 10% 0;
 }
-
 #upcoming-routes ol{
     padding-top:5%;
 }
-
 #upcoming-routes li{
     margin: 3% 3% 3% 0;
 }
@@ -160,7 +143,6 @@ article img{
 #aside-product3{
     grid-area: aside-product3;
 }
-
 #product-grid{
     display: grid;
     padding: 10%;
@@ -199,8 +181,19 @@ table{
     grid-area: price-table;
     border-collapse: collapse;
 }
+td:first-child, th:first-child{
+    background-color:#FF0;
+}
+tr:nth-child(even){
+    background-color: #CFF;
+}
+tr:nth-child(odd){
+    background-color: #FFF;
+}
 table, th, td {
-    border: 4px solid #c8f8ea;
+    border-color: black;
+    border-style: double;
+    border-width:4px;
 }
 th{
     text-align:center;
@@ -228,10 +221,9 @@ td{
     "smartwatch"
     "performance"
     "vr"
-    ;
-    
+    ;   
 }
-#innovative-products img {
+#innovative-products img{
     width:100%;
 }
 #pricelist {
@@ -244,7 +236,69 @@ td{
 }
 
 
+/*Contact page*/
+form{
+    grid-area:form;
+    width: 100%;
+}
+#contact-aside{
+    grid-area: contact-aside;
+    display:grid;
+    grid-template-areas: 
+    "smartwatch"
+    "performance"
+    "vr"
+    ;
+    border:#c8f8ea solid 5px;
+    border-radius: 5%;
+}
+#contact-aside img{
+    width:80%;
+    border-radius: 5%;
+    margin-top: 10%;
+}
+#contact-aside a{
+    margin-left:15%;
+}
+#contact-page{
+    display:grid;
+    grid-template-areas: 
+    "form contact-aside"
+    ;
+    gap: 20%;
+    margin: 10%;
+    width: 80%;
+}
+input, label{
+    display: block;  
+}
+label{
+    margin-top:5%;
+}
+input, textarea{
+    border-radius: 5px;
+    border: none;
+    line-height: 2em;
+    margin-right: 30%;
+}
+#submit{
+    border:#000 solid 1px;
+    margin-top: 5%;
+}
+textarea{
+    width: 30rem;
+    height: 20rem;
+}
+fieldset{
+    background-color: #c8f8ea;
+    border-radius: 5%;
+    width:600px;
+}
+legend{
+    font-size: 1.5em;
+}
 /*Media query for Mobile*/
+
 @media screen and (max-width:480px) {
    
     #largevideo{
@@ -348,17 +402,42 @@ td{
         "products"
         ;
     }
-    #innovative-products{
+    #innovative-products, #contact-aside{
         grid-template-areas: 
         "smartwatch"
         "performance"
         "vr"
         ;
     }
+    #contact-page{
+        grid-template-areas: 
+        "form"
+        "contact-aside"
+        ;
+        gap :5%;
+    }
+    textarea{
+        width: 18rem;
+        height:10rem;
+    }
+    fieldset{
+        width:100%;
+    }
+    #contact-aside img{
+        width:100%;
+        margin:4.5%;
+    }
+    #contact-aside a{
+        margin-left:0;
+    }
+    #contact-aside{
+        border:none;
+        margin-bottom:10%;
+    }
 }
 
-
 /*Media query for Tablet*/
+
 @media screen and (min-width: 481px) and (max-width: 1279px) {
     video{
         order:1;
@@ -393,7 +472,6 @@ td{
     .mobile, .desktop {
         display: none;
     }
-    
     #product-grid{
         grid-template-areas:
         "article1 article2"
@@ -428,14 +506,26 @@ td{
         "performance vr"
         ;
     }
+    textarea{
+        width: 18rem;
+        height:10rem;
+    }
+    fieldset{
+        width:100%;
+    }
+    #contact-aside img{
+        width:90%;
+        padding:5%;
+    }
+    #contact-aside a{
+        margin-left:0;
+    }
 }
 
 /*Desktop*/
+
 @media screen and (min-width: 1280px) {
-    #smallvideo{
+    #smallvideo, .mobile{
         display: none;
-    }
-    .mobile{
-        display:none;
     }
 }

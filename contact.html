@@ -11,7 +11,7 @@
     </head>
     <body>
         <header>
-            <img src="img/logo.svg" title="logo" alt="Logo containing three green triangles pointing to the right.">
+            <img class="tablet" src="img/logo.svg" title="logo" alt="Logo containing three green triangles pointing to the right.">
             <h1>Innomov</h1>
             <h2>Future of Sports</h2>
         </header>
@@ -23,30 +23,27 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-
-        <form action="vote.php" method="post">
-            <legend>Contact us</legend>
-            <fieldset>
-                <label for="name">Name: </label>
-                <input type="text" name="name">
-                <label for="email">E-mail address: </label>
-                <input type="email" name="email">
-                <label for="message">Your message: </label>
-                <textarea name="message" cols="30" rows="10"></textarea>
-                <input type="submit" value="Submit">
-            </fieldset>
-        </form>
-
-        <aside>
-            <header></header>
-            <figure></figure>
-            <figcaption></figcaption>
-            <figure></figure>
-            <figcaption></figcaption>
-            <figure></figure>
-            <figcaption></figcaption>
-        </aside>
-
+        <section id="contact-page">
+            <form action="vote.php" method="post">
+                <legend>Contact us</legend>
+                <fieldset>
+                    <label for="name">Name: </label>
+                    <input type="text" name="name">
+                    <label for="email">E-mail address: </label>
+                    <input type="email" name="email">
+                    <label for="message">Your message: </label>
+                    <textarea name="message"></textarea>
+                    <input id="submit" type="submit" value="Submit">
+                </fieldset>
+            </form>
+    
+            <aside id="contact-aside" >
+                <header></header>
+                <a id="smartwatch" href="https://www.inholland.nl"><img src="img/smartwatch.jpg" alt=""></a>
+                <a id="performance-tracker" href="https://www.inholland.nl"><img src="img/performance tracker.jpg" alt=""></a>
+                <a id="vr" href="https://www.inholland.nl"><img src="img/pexels-areous-ahmad-3175983.jpg" alt=""></a>
+            </aside>
+        </section>
         <footer>
             <p>&copy; 2022 Maike Pierick</p>
             <aside id="cookie-statement">
