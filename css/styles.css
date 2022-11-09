@@ -301,7 +301,7 @@ legend{
 
 @media screen and (max-width:480px) {
    
-    #largevideo{
+    #largevideo, #large-nav{
         display: none;
     }
     video{
@@ -337,29 +337,39 @@ legend{
     .desktop, .tablet{
         display:none;
     }
-    nav{
-        flex-basis:29%;
-        overflow:hidden;
-        height: 120px;
-
-    }
-    nav ul{
-        width:100%;
-        display:none;
-    }
-    nav li{
-        display:none;
-    }
-    body{
+    body{ 
         justify-content: flex-start;
     }
-    body>header{
-        flex-basis: 70%;
+    #hamburger-nav{
+        position:absolute;
+        right:0;
+        top: 15px;
+        background-color: #000;
+        color:#00e0a1;
+        font-size:3em;
+        padding-right: 15px;
     }
-    nav img{
-        width: 60%;
-        height: 60%;
-        margin-left: 25%;   
+    #hamburger{
+        display:none;
+    }
+    #hamburger-items li{
+        display:block;
+        width:50%;
+    }
+    #nav-hamburger label{
+        display:inline-block;       
+    }
+    #hamburger-items{
+        display:none;
+    }
+    #hamburger-nav input:checked ~ #hamburger-items{
+        display: block;
+        position:absolute;
+        right:0;
+        top: 100px;
+        text-align: center;
+        background-color: #00e0a1;
+        font-size: 0.5em;
     }
     #product-grid{
         grid-template-areas:
@@ -525,7 +535,7 @@ legend{
 /*Desktop*/
 
 @media screen and (min-width: 1280px) {
-    #smallvideo, .mobile{
+    #smallvideo, .mobile, #hamburger-nav{
         display: none;
     }
 }
