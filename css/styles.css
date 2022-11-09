@@ -5,34 +5,40 @@
 }
 body{
     font-size: 18px;
-    font-family: 'Roboto', Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-body>header, body>footer{
+body > header, body > footer{
     background-color: #000;
     color: #fbf9ff;
     padding-left:1%;
     flex-basis: 100%;
 }
-body>footer{
+body > footer{
     padding: 1.5em 0.5em;
+}
+h1 + h2{
+    word-spacing: .2em;
+}
+h1{
+    font-family: 'Roboto', Verdana, sans-serif;
+    font-size:2em;
+    font-weight: 400;
+    line-height: 1.2em;
+}
+h2 {
+    font-family: 'Roboto', Verdana, sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
 }
 header img{
     height:50px;
 }
-h1{
-    font-size:2em;
-    font-weight: 400;
-}
-h2,header {
-    font-weight: 300;
+#product-grid h2::first-letter{
+    color:#027e5b;
     font-size: 1.5em;
-}
-h3{
-    font-weight:200;
-    font-size:1.3em;
 }
 nav{
     background-color: #00e0a1;
@@ -48,9 +54,20 @@ nav a{
 nav ul{
     list-style-type: none;
     display: flex;
+    justify-content: space-around;
 }
 nav ul li{
-    margin: 10px 40px;
+    line-height: 2.2em;
+    width: 130px;
+    text-align: center;
+}
+ul li:hover{
+    background-color: #027e5b;
+    font-size: 1.1em;
+    letter-spacing: .3em;
+}
+p > a:visited{
+    color:#FFC27B;
 }
 video{
     width: 100%;
@@ -82,12 +99,13 @@ article {
     justify-content: space-between;
     margin:  3% 0;
 }
-#product-articles article > header{
+#product-articles article > h2{
    flex-basis:100%;
 }
 #product-articles article p{
     flex-basis: 40%;
     flex-shrink:1;
+    text-indent: 1em;
 }
 #product-articles article figure{
     flex-basis: 45%;
@@ -177,9 +195,12 @@ article img{
     border-radius: 5px;
     padding: 5%;
 }
+
+/*Pricing.html*/
+
 table{
     grid-area: price-table;
-    border-collapse: collapse;
+    border-collapse:collapse;
 }
 td:first-child, th:first-child{
     background-color:#FF0;
@@ -197,10 +218,24 @@ table, th, td {
 }
 th{
     text-align:center;
+    font-family: 'Notable';
 }
 td{
     padding: 15px;
     text-align: left;
+}
+#header-prices{
+    grid-area: header-prices;
+    text-align: center;
+    margin-top: 5%;
+}
+#paragraph-prices{
+    grid-area: paragraph;
+    text-align: center;
+    margin: 0 20%;
+}
+#header-prices-aside{
+    grid-area: header-aside;
 }
 #price-source{
     grid-area: price-source;
@@ -218,39 +253,45 @@ td{
     grid-area: products;
     display: grid;
     grid-template-areas: 
+    "header-aside"
     "smartwatch"
     "performance"
     "vr"
-    ;   
+    ;
 }
 #innovative-products img{
     width:100%;
 }
 #pricelist {
+    width: 80%;
     display: grid;
     grid-template-areas: 
+    "header-prices header-prices"
+    "paragraph paragraph"
     "price-table products" 
     "price-source products"
     ;
     gap: 5%;
 }
 
-
 /*Contact page*/
+
 form{
-    grid-area:form;
-    width: 100%;
+    width: 50%;
+    float: left;
 }
 #contact-aside{
     grid-area: contact-aside;
     display:grid;
-    grid-template-areas: 
+    grid-template-areas:
     "smartwatch"
     "performance"
     "vr"
     ;
     border:#c8f8ea solid 5px;
     border-radius: 5%;
+    float: right;
+    width:30%;
 }
 #contact-aside img{
     width:80%;
@@ -261,11 +302,6 @@ form{
     margin-left:15%;
 }
 #contact-page{
-    display:grid;
-    grid-template-areas: 
-    "form contact-aside"
-    ;
-    gap: 20%;
     margin: 10%;
     width: 80%;
 }
@@ -284,6 +320,7 @@ input, textarea{
 #submit{
     border:#000 solid 1px;
     margin-top: 5%;
+    text-transform: uppercase;
 }
 textarea{
     width: 30rem;
@@ -343,7 +380,7 @@ legend{
     #hamburger-nav{
         position:absolute;
         right:0;
-        top: 15px;
+        top: 0;
         background-color: #000;
         color:#00e0a1;
         font-size:3em;
@@ -353,21 +390,23 @@ legend{
         display:none;
     }
     #hamburger-items li{
-        display:block;
-        width:50%;
+        display:inline-block;
+        width:100%;
+        text-align:left;
+        padding:0 50px;
     }
     #nav-hamburger label{
         display:inline-block;       
     }
     #hamburger-items{
         display:none;
+        padding: 0;
     }
     #hamburger-nav input:checked ~ #hamburger-items{
         display: block;
         position:absolute;
         right:0;
-        top: 100px;
-        text-align: center;
+        top: 75px;
         background-color: #00e0a1;
         font-size: 0.5em;
     }
@@ -412,8 +451,17 @@ legend{
         "products"
         ;
     }
-    #innovative-products, #contact-aside{
+    #innovative-products{
         grid-template-areas: 
+        "header-aside"
+        "smartwatch"
+        "performance"
+        "vr"
+        ;
+    }
+    #contact-aside{
+        grid-template-areas: 
+        "header-aside"
         "smartwatch"
         "performance"
         "vr"
@@ -421,10 +469,14 @@ legend{
     }
     #contact-page{
         grid-template-areas: 
+        "header-prices"
         "form"
         "contact-aside"
         ;
         gap :5%;
+    }
+    form{
+        float:none;
     }
     textarea{
         width: 18rem;
@@ -443,6 +495,8 @@ legend{
     #contact-aside{
         border:none;
         margin-bottom:10%;
+        float:none;
+        width: 80%;
     }
 }
 
@@ -467,7 +521,7 @@ legend{
     #product3{
         order:0;
     }
-    article > header{
+    article > h2{
         order:-2;
     }
     article > figure{
