@@ -8,7 +8,7 @@ body{
     font-family: Arial, Helvetica, sans-serif, sans-serif;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 body > header, body > footer{
     background-color: #000;
@@ -24,7 +24,7 @@ h1 + h2{
 }
 h1{
     font-family: 'Roboto', Verdana, sans-serif;
-    font-size:2em;
+    font-size:2.5em;
     font-weight: 400;
     line-height: 1.2em;
 }
@@ -271,11 +271,19 @@ td{
     "price-table products" 
     "price-source products"
     ;
-    gap: 5%;
+    row-gap: 1%;
+    column-gap:5%;
+    margin-bottom: 10%;
 }
 
 /*Contact page*/
 
+#contactinfo{
+    margin: 1% 0 5% 0;
+}
+#contactinfo h1{
+    margin-bottom: 5%;
+}
 form{
     width: 50%;
     float: left;
@@ -284,6 +292,7 @@ form{
     grid-area: contact-aside;
     display:grid;
     grid-template-areas:
+    "header-aside"
     "smartwatch"
     "performance"
     "vr"
@@ -292,6 +301,7 @@ form{
     border-radius: 5%;
     float: right;
     width:30%;
+    text-align: center;
 }
 #contact-aside img{
     width:80%;
@@ -362,14 +372,16 @@ legend{
     }
     article>p{
         flex-grow:1;
+        min-width: 250px;
         text-align: justify;
+        padding: 5%;
     }
     article>figure {
-        flex-basis:80%;
+        flex-basis:100%;
         margin: 5% auto 0 auto;
     }
     footer{
-        order:5
+        order:6;
     }
     .desktop, .tablet{
         display:none;
@@ -444,8 +456,12 @@ legend{
     #cookie-statement{
         height: 3%;
     }
+    #table-wrap{
+        overflow-x: auto;
+    }
     #pricelist{
         grid-template-areas: 
+        "header-prices"
         "price-table"
         "price-source"
         "products"
@@ -458,6 +474,10 @@ legend{
         "performance"
         "vr"
         ;
+        margin: 5;
+    }
+    #innovative-products  img{
+        width:80%;
     }
     #contact-aside{
         grid-template-areas: 
@@ -466,10 +486,11 @@ legend{
         "performance"
         "vr"
         ;
+        margin: 15% 5%;
+        text-align: center;
     }
     #contact-page{
         grid-template-areas: 
-        "header-prices"
         "form"
         "contact-aside"
         ;
@@ -477,6 +498,7 @@ legend{
     }
     form{
         float:none;
+        margin: 0 5%;
     }
     textarea{
         width: 18rem;
@@ -553,22 +575,32 @@ legend{
         margin-bottom: 20%;
     }
     #product-imgs{ 
-        grid-template-areas: 
+        grid-template-areas:
         "aside-product1 aside-product2"
         "aside-product1 aside-product2"
         ;
     }
+   #innovative-products > #smartwatch{
+        display:none;
+    }
     #pricelist{
         grid-template-areas: 
+        "header-prices"
+        "paragraph"
         "price-table"
         "price-source"
         "products"
         ;
+        margin-left:5%;
+        margin-bottom:25%;
     }
     #innovative-products{
         grid-template-areas: 
+        "header-aside header-aside"
         "performance vr"
         ;
+        gap: 50px;
+        text-align: center;
     }
     textarea{
         width: 18rem;
