@@ -34,22 +34,22 @@
             </ul>
         </nav>
         <section id="contact-page">
+            <h2 id="header-contact">Reach us here</h2>
             <section id="contactinfo">
-                <h2 id="header-contact">Reach us here</h2>
                 <p>Address: Randomness street 123, AB1234 Gotham City</p>   
                 <p>Email: innomov@example.com</p>
                 <p>Telephone: 0123456789</p>
             </section>
             
             <form action="vote.php" method="post">
-                <legend>Contact us</legend>
                 <fieldset>
+                    <legend>Contact us</legend>
                     <label for="name">Name: </label>
-                    <input type="text" name="name">
+                    <input type="text" name="name" id="name">
                     <label for="email">E-mail address: </label>
-                    <input type="email" name="email">
+                    <input type="email" name="email" id="email">
                     <label for="message">Your message: </label>
-                    <textarea name="message"></textarea>
+                    <textarea name="message" id="message"></textarea>
                     <input id="submit" type="submit" value="Submit">
                 </fieldset>
             </form>
